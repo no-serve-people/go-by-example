@@ -21,6 +21,16 @@ type circle struct {
 	radius float64
 }
 
+// 要在 Go 中实现一个接口，我们只需要实现接口中的所有
+// 方法。这里我们让 `square` 实现了 `geometry` 接口。
+func (s square) area() float64 {
+	return s.width * s.height
+}
+
+func (s square) perim() float64 {
+	return 2*s.width + 2*s.height
+}
+
 // `circle` 的实现。
 func (c circle) area() float64 {
 	return math.Pi * c.radius * c.radius
